@@ -31,79 +31,70 @@ public class BasePizzas {
 <span class="fc" id="L31">	}</span>
 	
 	private void initMenu() {
-<span class="fc" id="L34">		Ingredient i1=new Ingredient(&quot;sauce tomate&quot;, true);</span>
-<span class="fc" id="L35">		Ingredient i2=new Ingredient(&quot;creme fraiche&quot;, true);</span>
-<span class="fc" id="L36">		Ingredient i3=new Ingredient(&quot;jambon blanc&quot;, false);</span>
-<span class="fc" id="L37">		Ingredient i4=new Ingredient(&quot;aubergine&quot;, true);</span>
-<span class="fc" id="L38">		Ingredient i5=new Ingredient(&quot;mozzarelle&quot;, true);</span>
-<span class="fc" id="L39">		Ingredient i6=new Ingredient(&quot;pancetta&quot;, false);</span>
-<span class="fc" id="L40">		Ingredient i7=new Ingredient(&quot;champignons&quot;, true);</span>
-<span class="fc" id="L41">		Ingredient i8=new Ingredient(&quot;courgette&quot;, true);</span>
-<span class="fc" id="L42">		Ingredient i9=new Ingredient(&quot;taleggio&quot;, true);</span>
-<span class="fc" id="L43">		Ingredient i10=new Ingredient(&quot;chorizo&quot;, false);</span>
-<span class="fc" id="L44">		Pizza p1=new Pizza(&quot;berk&quot;, 10);</span>
-<span class="fc" id="L45">		p1.ajoutIngredient(i8);</span>
-<span class="fc" id="L46">		p1.ajoutIngredient(i10);</span>
-<span class="fc" id="L47">		Pizza p2=new Pizza(&quot;vege&quot;, 11);</span>
-<span class="fc" id="L48">		p2.ajoutIngredient(i1);</span>
-<span class="fc" id="L49">		p2.ajoutIngredient(i4);</span>
-<span class="fc" id="L50">		p2.ajoutIngredient(i5);</span>
-<span class="fc" id="L51">		p2.ajoutIngredient(i7);</span>
-<span class="fc" id="L52">		p2.ajoutIngredient(i8);</span>
-<span class="fc" id="L53">		Pizza p3=new Pizza(&quot;ouch&quot;, 15);</span>
-<span class="fc" id="L54">		p3.ajoutIngredient(i2);</span>
-<span class="fc" id="L55">		p3.ajoutIngredient(i3);</span>
-<span class="fc" id="L56">		p3.ajoutIngredient(i4);</span>
-<span class="fc" id="L57">		p3.ajoutIngredient(i5);</span>
-<span class="fc" id="L58">		p3.ajoutIngredient(i6);</span>
-<span class="fc" id="L59">		p3.ajoutIngredient(i9);</span>
-<span class="fc" id="L60">		p3.ajoutIngredient(i10);</span>
-<span class="fc" id="L61">		menu.put(p1.getNom(), p1);</span>
-<span class="fc" id="L62">		menu.put(p2.getNom(), p2);</span>
-<span class="fc" id="L63">		menu.put(p3.getNom(), p3);</span>
-<span class="fc" id="L64">	}</span>
+<span class="fc" id="L34">		this.initIngredients();</span>
+<span class="fc" id="L35">		Pizza p1=new Pizza(&quot;berk&quot;, 10);</span>
+<span class="fc" id="L36">		p1.ajoutIngredient(ingredientsDisponibles.get(7));</span>
+<span class="fc" id="L37">		p1.ajoutIngredient(ingredientsDisponibles.get(9));</span>
+<span class="fc" id="L38">		Pizza p2=new Pizza(&quot;vege&quot;, 11);</span>
+<span class="fc" id="L39">		p2.ajoutIngredient(ingredientsDisponibles.get(0));</span>
+<span class="fc" id="L40">		p2.ajoutIngredient(ingredientsDisponibles.get(3));</span>
+<span class="fc" id="L41">		p2.ajoutIngredient(ingredientsDisponibles.get(4));</span>
+<span class="fc" id="L42">		p2.ajoutIngredient(ingredientsDisponibles.get(6));</span>
+<span class="fc" id="L43">		p2.ajoutIngredient(ingredientsDisponibles.get(7));</span>
+<span class="fc" id="L44">		Pizza p3=new Pizza(&quot;ouch&quot;, 15);</span>
+<span class="fc" id="L45">		p3.ajoutIngredient(ingredientsDisponibles.get(1));</span>
+<span class="fc" id="L46">		p3.ajoutIngredient(ingredientsDisponibles.get(2));</span>
+<span class="fc" id="L47">		p3.ajoutIngredient(ingredientsDisponibles.get(3));</span>
+<span class="fc" id="L48">		p3.ajoutIngredient(ingredientsDisponibles.get(4));</span>
+<span class="fc" id="L49">		p3.ajoutIngredient(ingredientsDisponibles.get(5));</span>
+<span class="fc" id="L50">		p3.ajoutIngredient(ingredientsDisponibles.get(8));</span>
+<span class="fc" id="L51">		p3.ajoutIngredient(ingredientsDisponibles.get(9));</span>
+<span class="fc" id="L52">		menu.put(p1.getNom(), p1);</span>
+<span class="fc" id="L53">		menu.put(p2.getNom(), p2);</span>
+<span class="fc" id="L54">		menu.put(p3.getNom(), p3);</span>
+<span class="fc" id="L55">	}</span>
 
 	public void addPizzaToMenu(Pizza p) {
-<span class="fc" id="L67">		menu.put(p.getNom(), p);</span>
-<span class="fc" id="L68">	}</span>
+<span class="fc" id="L58">		menu.put(p.getNom(), p);</span>
+<span class="fc" id="L59">	}</span>
 	public Pizza getPizzaFromMenu(String nom) {
-<span class="fc" id="L70">		return menu.get(nom);</span>
+<span class="fc" id="L61">		return menu.get(nom);</span>
 	}
 
 	public Pizza createSurpriseWhitePizza() {
-<span class="fc" id="L74">		Pizza p=new Pizza(&quot;Surprise blanche&quot;, 13);</span>
-<span class="fc" id="L75">		int nbIng=5;</span>
-<span class="fc bfc" id="L76" title="All 2 branches covered.">		while (nbIng &gt; 0) {</span>
-<span class="fc" id="L77">			int ingpos=rand.nextInt(ingredientsDisponibles.size());</span>
-<span class="pc bpc" id="L78" title="1 of 2 branches missed.">			if (!ingredientsDisponibles.get(ingpos).getNom().equals(&quot;crème fraiche&quot;)) {</span>
-<span class="fc" id="L79">				p.ajoutIngredient(ingredientsDisponibles.get(ingpos));</span>
-<span class="fc" id="L80">				nbIng--;</span>
+<span class="fc" id="L65">		Pizza p=new Pizza(&quot;Surprise blanche&quot;, 13);</span>
+<span class="fc" id="L66">		int nbIng=5;</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		while (nbIng &gt; 0) {</span>
+<span class="fc" id="L68">			int ingpos=rand.nextInt(ingredientsDisponibles.size());</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">			if (!ingredientsDisponibles.get(ingpos).getNom().equals(&quot;crème fraiche&quot;)) {</span>
+<span class="fc" id="L70">				p.ajoutIngredient(ingredientsDisponibles.get(ingpos));</span>
+<span class="fc" id="L71">				nbIng--;</span>
 			}
-<span class="fc" id="L82">		}</span>
-<span class="fc" id="L83">		return p;</span>
+		}
+<span class="fc" id="L74">		return p;</span>
 	}
 
 	public boolean exists(String ingName) {
-<span class="nc bnc" id="L87" title="All 2 branches missed.">		for (Ingredient i:ingredientsDisponibles) {</span>
-<span class="nc bnc" id="L88" title="All 2 branches missed.">			if (i.getNom().equals(ingName))</span>
-<span class="nc" id="L89">				return true;</span>
-<span class="nc" id="L90">		}</span>
-<span class="nc" id="L91">		return false;</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">		for (Ingredient i:ingredientsDisponibles) {</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">			if (i.getNom().equals(ingName))</span>
+<span class="nc" id="L80">				return true;</span>
+		}
+<span class="nc" id="L82">		return false;</span>
 	}
 
 	public 	List&lt;Pizza&gt; pizzasWithMissingIngredient(){
-<span class="nc" id="L95">		ArrayList&lt;Pizza&gt; res=new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L96" title="All 2 branches missed.">		for (Pizza p:menu.values()) {</span>
-<span class="nc bnc" id="L97" title="All 2 branches missed.">			if (!p.getNom().startsWith(&quot;surprise&quot;)) {</span>
-<span class="nc bnc" id="L98" title="All 2 branches missed.">				for (Ingredient i:p.ingredients()) {</span>
-<span class="nc bnc" id="L99" title="All 2 branches missed.">					if(!ingredientsDisponibles.contains(i)) {</span>
-<span class="nc" id="L100">						res.add(p);</span>
-<span class="nc" id="L101">						break;</span>
+<span class="nc" id="L86">		ArrayList&lt;Pizza&gt; res=new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">		for (Pizza p:menu.values()) {</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">			if (!p.getNom().startsWith(&quot;surprise&quot;)) {</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">				for (Ingredient i:p.ingredients()) {</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">					if(!ingredientsDisponibles.contains(i)) {</span>
+<span class="nc" id="L91">						res.add(p);</span>
+<span class="nc" id="L92">						break;</span>
 					}
 				}
 			}
-<span class="nc" id="L105">		}</span>
-<span class="nc" id="L106">		return res;</span>
+		}
+<span class="nc" id="L97">		return res;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -14,7 +14,7 @@ public class Pizza {
 	public boolean estRouge(){
 <span class="nc bnc" id="L15" title="All 2 branches missed.">		for (Ingredient i:composition){</span>
 <span class="nc bnc" id="L16" title="All 2 branches missed.">			if (i.getNom().equals(&quot;sauce tomate&quot;)) return true;</span>
-<span class="nc" id="L17">		}</span>
+		}
 <span class="nc" id="L18">		return false;</span>
 	}
 
@@ -24,7 +24,7 @@ public class Pizza {
 <span class="nc bnc" id="L24" title="All 2 branches missed.">		for (Ingredient i:composition){</span>
 <span class="nc bnc" id="L25" title="All 2 branches missed.">			if (i.getNom().equals(&quot;sauce tomate&quot;)) sauceTomate=true;</span>
 <span class="nc bnc" id="L26" title="All 2 branches missed.">			if (i.getNom().equals(&quot;crème fraîche&quot;)) creme=true;</span>
-<span class="nc" id="L27">		}</span>
+		}
 <span class="nc bnc" id="L28" title="All 4 branches missed.">		return !sauceTomate&amp;&amp;creme;</span>
 	}
 
@@ -32,7 +32,7 @@ public class Pizza {
 <span class="nc" id="L32">		boolean result=true;</span>
 <span class="nc bnc" id="L33" title="All 2 branches missed.">		for (Ingredient i:composition){</span>
 <span class="nc bnc" id="L34" title="All 2 branches missed.">			if (!i.isVegetarien()) return false;</span>
-<span class="nc" id="L35">		}</span>
+		}
 <span class="nc" id="L36">		return result;</span>
 	}
 
@@ -80,14 +80,14 @@ public class Pizza {
 <span class="nc bnc" id="L80" title="All 2 branches missed.">			if (!i.isVegetarien()) {</span>
 <span class="nc" id="L81">				composition.remove(i);</span>
 			}
-<span class="nc" id="L83">		}</span>
+		}
 <span class="nc" id="L84">	}</span>
 	
 	public StringBuilder formattedIngredients() {
 <span class="fc" id="L87">		StringBuilder s = new StringBuilder();</span>
 <span class="fc bfc" id="L88" title="All 2 branches covered.">		for (Ingredient ing:composition) {</span>
 <span class="fc" id="L89">			s.append(ing.getNom()+&quot; &quot;);</span>
-<span class="fc" id="L90">		}</span>
+		}
 <span class="fc" id="L91">		return s;</span>
 	}
 	
